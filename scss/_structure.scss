@@ -1,0 +1,39 @@
+body {
+  background-color: var(--primary-background);
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+}
+main {
+  display: grid;
+  grid-template-rows: 1fr 8fr 1fr;
+}
+aside {
+  background-color: var(--main-color);
+
+  header {
+    height: 15%;
+  }
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.chat-box-header {
+  background-color: var(--secondary-background);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.message-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+  }
+}

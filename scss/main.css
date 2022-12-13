@@ -1,0 +1,161 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap");
+:root {
+  --primary-background: rgb(14, 14, 14);
+  --secondary-background: rgb(44, 44, 44);
+  --tertiary-baxckground: rgb(135, 135, 135);
+  --main-color: rgb(81, 70, 136);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html {
+  color-scheme: dark light;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+img,
+picture,
+svg,
+video {
+  display: grid;
+  max-width: 100%;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-color: var(--primary-background);
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+}
+
+main {
+  display: grid;
+  grid-template-rows: 1fr 8fr 1fr;
+}
+
+aside {
+  background-color: var(--main-color);
+}
+aside header {
+  height: 15%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.chat-box-header {
+  background-color: var(--secondary-background);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.message-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.username {
+  margin-left: 1rem;
+}
+
+.users-header {
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+.login,
+.logout {
+  cursor: pointer;
+  margin-right: 2rem;
+}
+
+#login-form {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: var(--secondary-background);
+}
+#login-form .close-login {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+#login-form .close-login::after {
+  content: "❌";
+}
+#login-form form {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+#login-form form input {
+  margin: 1rem;
+  padding: 0.5rem;
+}
+#login-form form input[type=submit] {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.user {
+  padding: 1rem;
+  border-bottom: 2px solid #4b417e;
+  list-style-type: none;
+}
+.user:hover {
+  background-color: #dbb500;
+}
+
+#chatter,
+#send-message {
+  resize: none;
+  outline: none;
+}
+
+#chatter {
+  margin-left: 2rem;
+}
+
+#send-message {
+  width: 90%;
+  background-color: var(--secondary-background);
+}/*# sourceMappingURL=main.css.map */

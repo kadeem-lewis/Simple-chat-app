@@ -1,0 +1,12 @@
+#chatter,
+#send-message {
+  resize: none;
+  outline: none;
+}
+#chatter {
+  margin-left: 2rem;
+}
+#send-message {
+  width: 90%;
+  background-color: var(--secondary-background);
+}

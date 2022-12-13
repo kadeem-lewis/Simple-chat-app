@@ -1,0 +1,50 @@
+.username {
+  margin-left: 1rem;
+}
+
+.users-header {
+  font-weight: 600;
+  margin-left: 1rem;
+}
+.login,
+.logout {
+  cursor: pointer;
+  margin-right: 2rem;
+}
+#login-form {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: var(--secondary-background);
+  .close-login {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    &::after {
+      content: "\274c";
+    }
+  }
+  form {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    input {
+      margin: 1rem;
+      padding: 0.5rem;
+    }
+    input[type="submit"] {
+      width: fit-content;
+      margin-inline: auto;
+    }
+  }
+}
+
+.user {
+  padding: 1rem;
+  border-bottom: 2px solid darken($color: #514688, $amount: 3);
+  list-style-type: none;
+  &:hover {
+    background-color: darken($color: #ffd300, $amount: 7);
+  }
+}
