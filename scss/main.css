@@ -177,4 +177,34 @@ header {
 #send-message {
   width: 90%;
   background-color: var(--secondary-background);
+}
+
+.chat-box {
+  display: grid;
+  flex-direction: column;
+  overflow-y: scroll;
+  gap: 0.5rem;
+  margin: 2rem;
+}
+.chat-box .recipient {
+  justify-self: left;
+  text-align: left;
+  background-color: var(--main-color);
+}
+.chat-box .sender {
+  justify-self: right;
+  text-align: right;
+  background-color: var(--secondary-background);
+}
+
+.recipient,
+.sender {
+  width: 50%;
+  border-radius: 0.875rem;
+  padding: 0.25rem 1.5rem;
+}
+
+select {
+  margin-left: 2rem;
+  font-size: 200%;
 }/*# sourceMappingURL=main.css.map */
