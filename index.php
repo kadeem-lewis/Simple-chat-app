@@ -1,6 +1,7 @@
 <?php
 
 require_once 'functions.php';
+session_start();
 $error_message;
 $success_message;
 $_SESSION["logged_in"] = false;
@@ -18,10 +19,8 @@ if (isset($_POST['Submit'])) {
         $_SESSION["logged_in"] = false;
     }
 }
-// TODO: sending typed messages to database
 
 
-// TODO: receiving messages from the database
 
 
 
