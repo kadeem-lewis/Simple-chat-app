@@ -14,14 +14,17 @@
     <div class="container">
         <aside class="sidebar">
             <header>
-                <h3 class="username"><?php
-                                        if (isset($_SESSION['logged_in'])) {
-                                        } else {
-                                            echo "User";
-                                        }
-                                        ?></h3>
+                <h3 class="username-display">
+                    <?php
+                    if (isset($_SESSION['username'])) {
+                        echo "{$_SESSION["username"]}";
+                    } else {
+                        echo "User";
+                    }
+                    ?>
+                </h3>
                 <?php
-                if (isset($_SESSION['logged_in'])) {
+                if (isset($_SESSION['username'])) {
                     echo "<p class='logout'>Log Out</p>";
                 } else {
                     echo "<p class='login' onclick='showLoginModal()'>Login</p>";
@@ -42,24 +45,48 @@
         </aside>
         <main>
             <div class="chat-box-header">
-                <textarea name="chatter" id="chatter"></textarea>
+                <select name="recipients" id="recipients">
+                    <?php
+                    if (isset($_SESSION['username'])) {
+                        $rows = get_users($conn);
+                        foreach ($rows as $row) {
+                            if ($row['name'] != $_SESSION['username']) {
+                                echo "<option class='recipient'>" . $row['name'] . "</option>";
+                            }
+                        }
+                    } else {
+                        echo "<option> Users </option>";
+                    }
+                    ?>
+                </select>
             </div>
             <div class="chat-box"></div>
             <div class="message-box">
                 <textarea name="send-message" id="send-message"></textarea>
-                <button type="submit">hey</button>
+                <button type="submit" class="submit-message">hey</button>
             </div>
         </main>
     </div>
-    <div id="login-form">
-        <span class="close-login" onclick="hideLoginModal()"></span>
+    <div id="login-form-container">
+        <span class="close-login"></span>
         <h2>Login Form</h2>
-        <form>
+        <?php
+        if (!empty($error_message)) {
+            echo "<div class='error-messages'>
+            <p> $error_message</p>
+            </div>";
+        } else if (!empty($success_message)) {
+            echo "<div class='success-messages'>
+            <p> $success_message</p>
+            </div>";
+        }
+        ?>
+        <form id="login-form" method="POST">
             <label for="user-name">Name: </label>
             <input type="text" name="user-name" id="user-name">
             <label for="user-password">Password: </label>
             <input type="password" name="user-password" id="user-password">
-            <input type="submit" name="Submit" value="Submit">
+            <input type="submit" class="submit-btn" name="Submit" value="Submit">
         </form>
     </div>
 </body>
