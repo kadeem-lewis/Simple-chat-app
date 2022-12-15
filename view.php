@@ -63,7 +63,7 @@
             <div class="chat-box"></div>
             <div class="message-box">
                 <textarea name="send-message" id="send-message"></textarea>
-                <button type="submit" class="submit-message">hey</button>
+                <button type="submit" class="submit-message">Send</button>
             </div>
         </main>
     </div>
