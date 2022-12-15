@@ -11,8 +11,7 @@
   cursor: pointer;
   margin-right: 2rem;
 }
-#login-form {
-  display: none;
+#login-form-container {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -47,4 +46,20 @@
   &:hover {
     background-color: darken($color: #ffd300, $amount: 7);
   }
+}
+
+.error-messages,
+.success-messages {
+  background-color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.error-messages {
+  color: var(--error);
+  border: 2px solid var(--error);
+}
+.success-messages {
+  color: var(--success);
+  border: 2px solid var(--success);
 }

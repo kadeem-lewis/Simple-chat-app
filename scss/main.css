@@ -5,6 +5,8 @@
   --secondary-background: rgb(44, 44, 44);
   --tertiary-baxckground: rgb(135, 135, 135);
   --main-color: rgb(81, 70, 136);
+  --error: #dd2612;
+  --success: green;
 }
 
 *,
@@ -105,31 +107,30 @@ header {
   margin-right: 2rem;
 }
 
-#login-form {
-  display: none;
+#login-form-container {
   position: fixed;
   top: 50%;
   left: 50%;
   background-color: var(--secondary-background);
 }
-#login-form .close-login {
+#login-form-container .close-login {
   position: absolute;
   right: 0;
   cursor: pointer;
 }
-#login-form .close-login::after {
+#login-form-container .close-login::after {
   content: "❌";
 }
-#login-form form {
+#login-form-container form {
   margin: 2rem;
   display: flex;
   flex-direction: column;
 }
-#login-form form input {
+#login-form-container form input {
   margin: 1rem;
   padding: 0.5rem;
 }
-#login-form form input[type=submit] {
+#login-form-container form input[type=submit] {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -143,6 +144,24 @@ header {
 }
 .user:hover {
   background-color: #dbb500;
+}
+
+.error-messages,
+.success-messages {
+  background-color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.error-messages {
+  color: var(--error);
+  border: 2px solid var(--error);
+}
+
+.success-messages {
+  color: var(--success);
+  border: 2px solid var(--success);
 }
 
 #chatter,
