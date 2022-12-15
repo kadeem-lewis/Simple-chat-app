@@ -23,25 +23,25 @@ function get_users($db)
     $rows = $stmt->fetchAll();
     return $rows;
 }
-function get_messages($db, $name)
+function get_messages($db)
 {
-    $sql = "SELECT chatMessages,name,dateSent from messages WHERE name = ?";
-    try {
-        $stmt = $db->prepare($sql);
-        $stmt->bindValue(1, $name, PDO::PARAM_STR);
-        $stmt->execute();
-    } catch (PDOException $e) {
-        $e->getMessage();
-    }
+    $sql = "SELECT `name`,chatMessage,dateSent,recipient  FROM messages";
+
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
 }
-function send_message($db, $name, $message)
+function send_message($db, $name, $message, $recipient)
 {
-    $sql = "INSERT INTO messages (name,chatMessage ) VALUES (?,?,?);";
+    $sql = "INSERT INTO messages (name,chatMessage, recipient ) VALUES (?,?,?);";
     try {
         $stmt = $db->prepare($sql);
         $stmt->bindValue(1, $name, PDO::PARAM_STR);
-        $stmt->bindValue(1, $message, PDO::PARAM_STR);
+        $stmt->bindValue(2, $message, PDO::PARAM_STR);
+        $stmt->bindValue(3, $recipient, PDO::PARAM_STR);
         $stmt->execute();
+        return true;
     } catch (PDOException $e) {
         $e->getMessage();
     }
