@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Chat App</title>
-    <link rel="stylesheet" href="scss/main.css">
-    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="../../public/scss/main.css">
+    <script defer src="../../public/js/app.js"></script>
 </head>
 
 <body>
