@@ -15,5 +15,8 @@
     "require": {
         "cboden/ratchet": "^0.4.4",
         "scssphp/scssphp": "^1.11"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
     }
 }
