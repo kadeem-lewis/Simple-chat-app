@@ -12,5 +12,8 @@
             "email": "print.helloworld@genericindividual.com"
         }
     ],
-    "require": {}
+    "require": {
+        "cboden/ratchet": "^0.4.4",
+        "scssphp/scssphp": "^1.11"
+    }
 }
