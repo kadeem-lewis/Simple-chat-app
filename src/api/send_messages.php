@@ -1,5 +1,5 @@
 <?php
-require 'functions.php';
+require '../models/functions.php';
 $data = json_decode(file_get_contents('php://input'), true);
 $res = [];
 $username = htmlspecialchars($data["name"]);

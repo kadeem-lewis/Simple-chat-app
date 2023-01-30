@@ -1,5 +1,5 @@
 <?php
-require 'functions.php';
+require '../models/functions.php';
 
 // Gets all the messages in the database and converts them to a JSON object
 $data = [];
