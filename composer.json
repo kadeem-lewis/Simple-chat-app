@@ -1,0 +1,16 @@
+{
+    "name": "user/simple-chat-app",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "User\\SimpleChatApp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "kadeem-lewis",
+            "email": "print.helloworld@genericindividual.com"
+        }
+    ],
+    "require": {}
+}
